@@ -9,11 +9,11 @@ torchvision==0.6,
 tqdm
 ```
 For training, download the Youtube-VOS from [here](https://competitions.codalab.org/competitions/19544#participate-get_data).
-Modify the paths in train.py and run the following command.
+Modify the data paths in train.py and run the following command.
 ```
 python train.py
 ```
-For inference with the pretrained model, download the weights from [here]() and put them under the Model directory.
+For inference with the pretrained model, download the weights from [here](https://drive.google.com/file/d/1qnB-BJJOCUwdRogrD5LNF_oMzeQ9Fdto/view?usp=sharing) and put them under the Model directory.
 
 Modify the data paths in submit_ytvos.py and run the following command.
 
