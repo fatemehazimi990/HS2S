@@ -23,4 +23,3 @@ python submit_ytvos.py with model_name='weights_HS2S.pth'
 In case of questions, please contact fatemeh.azimi@dfki.de.
 
 
-#'/netscratch/azimi/code_dir/seq2seq_vos/sacred/training/S2S_offlin_training/pytorchseq2seq2018/sacred/icpr_resnet_noInit/V1/withRefEncoder/PlusMatchPrevious/LightV1_encoder50/skipmemnocrop/exp5/420.5samestart/'
