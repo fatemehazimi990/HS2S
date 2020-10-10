@@ -1,5 +1,6 @@
 # HS2S
 Pytorch code for [Hybrid Sequence to Sequence Model for Video Object Segmentation]() <br />
+For more information, please visit our [project page]() <br />
 Dependencie:
 ```
 numpy==1.18.1,
@@ -8,8 +9,8 @@ torch==1.5,
 torchvision==0.6,
 tqdm
 ```
-For training, download the Youtube-VOS from [here](https://competitions.codalab.org/competitions/19544#participate-get_data).
-Modify the data paths in train.py and run the following command.
+For training on Youtube-VOS, download the dataset from [here](https://competitions.codalab.org/competitions/19544#participate-get_data) and modify the data paths in train.py.
+Finally, run the following command.
 ```
 python train.py
 ```
