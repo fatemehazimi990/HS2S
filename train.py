@@ -11,7 +11,7 @@ from sacred import Experiment
 from sacred.observers import FileStorageObserver
 
 ex = Experiment()
-PATH = '/netscratch/azimi/code_dir/seq2seq_vos/sacred/training/S2S_offlin_training/pytorchseq2seq2018/sacred/icpr_resnet_noInit/V1/withRefEncoder/PlusMatchPrevious/LightV1_encoder50/skipmemnocrop/exp5/420.5samestart/'
+PATH = 'sacred/HS2S/'
 ex.observers.append(FileStorageObserver.create(PATH))
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
