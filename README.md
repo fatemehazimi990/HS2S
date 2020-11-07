@@ -1,5 +1,5 @@
 # HS2S
-Pytorch code for [Hybrid Sequence to Sequence Model for Video Object Segmentation]() <br />
+Pytorch code for [Hybrid Sequence to Sequence Model for Video Object Segmentation](https://arxiv.org/abs/2010.05069) <br />
 For more information, please visit our [project page]() <br />
 Dependencie:
 ```
@@ -21,6 +21,15 @@ Modify the configurations and data paths in submit_ytvos.py and run the followin
 ```
 python submit_ytvos.py with model_name='weights_HS2S.pth'
 ```
-In case of questions, please contact fatemeh.azimi@dfki.de.
+In case of questions, please contact fatemeh.azimi@dfki.de and if this repository is useful for you work, please consider citing our paper:
+
+```
+@article{azimi2020hybrid,
+  title={Hybrid Sequence to Sequence Model for Video Object Segmentation},
+  author={Azimi, Fatemeh and Frolov, Stanislav and Raue, Federico and Hees, Joern and Dengel, Andreas},
+  journal={arXiv preprint arXiv:2010.05069},
+  year={2020}
+}
+```
 
 
