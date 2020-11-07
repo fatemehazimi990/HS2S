@@ -108,8 +108,6 @@ class YoutubeVOS(Dataset):
         if self.mode is 'train':
             this_seq, obj = self.sequences[idx]
             max_len = random.choice(range(5, self.max_len+1))
-            # info = torch.utils.data.get_worker_info()
-            # print(info.id, max_len)
 
             seq_dict = {'image': [], 'gt': [], 'dists': []}
             obj_frames = self.obj['videos'][this_seq]['objects'][obj]['frames']
@@ -184,9 +182,6 @@ class YoutubeVOS(Dataset):
             scale = random.choice(self.affine['scale'])/100.
             shear = random.choice(self.affine['shear'])/100.
 
-        ### crop info for the list
-        # top = random.randint(0, 128)
-        # left = random.randint(0, 224)
         for frame in frame_list:
             img = (Image.open(img_path + frame + '.jpg')).convert('RGB')
             if flip:
@@ -194,24 +189,16 @@ class YoutubeVOS(Dataset):
 
             if self.affine:
                 img = TF.affine(img, angle, [translation, translation], scale, shear)
-            ### After affine apply random crop
-            # img = TF.crop(img, top=top, left=left, height=256+128, width=448+224)
-            ###
             img = self.transform['image'](img)
             if obj is None:
                 seq_dict['image'].append(img)
                 return
-            # do label at once with img
             else:
                 label = Image.open(ann_path + frame + '.png')
                 if flip:
                     label = TF.hflip(label)
                 if self.affine:
                     label = TF.affine(label, angle, [translation, translation], scale, shear)
-
-                ###
-                # label = TF.crop(label, top=top, left=left, height=256+128, width=448+224)
-                ###
 
                 label = self.transform['gt'](label)
                 label = np.array(label)
@@ -257,7 +244,6 @@ def pooled_batches(loader):
             seq_len = min([len(samples[ll]['image']) for ll in range(num_workers)])
 
             for i in range(seq_len):
-                # for each element in the seq, collect across the workers
                 temp_list_data = []
                 temp_list_gt = []
                 temp_list_distance = []
@@ -276,7 +262,6 @@ def pooled_batches(loader):
 
 
 def _init_fn(worker_id):
-    # although this gets reset for every epoch, as we have shuffle True, it shoudl be fine I guess
     seed = 7
     np.random.seed(seed)
     torch.random.manual_seed(seed)
