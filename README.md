@@ -16,7 +16,7 @@ python train.py
 ```
 For inference with the pretrained model, download the weights from [here](https://drive.google.com/file/d/1qnB-BJJOCUwdRogrD5LNF_oMzeQ9Fdto/view?usp=sharing) and put them under the Model directory.
 
-Modify the data paths in submit_ytvos.py and run the following command.
+Modify the configurations and data paths in submit_ytvos.py and run the following command.
 
 ```
 python submit_ytvos.py with model_name='weights_HS2S.pth'
