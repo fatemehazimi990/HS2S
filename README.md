@@ -1,5 +1,5 @@
 # HS2S
-Pytorch code for [Hybrid Sequence to Sequence Model for Video Object Segmentation](https://arxiv.org/abs/2010.05069) <br />
+Pytorch code for [Hybrid-S2S: Video Object Segmentation with Recurrent Networks and Correspondence Matching](https://arxiv.org/abs/2010.05069) <br />
 For more information, please visit our [project page]() <br />
 Dependencie:
 ```
