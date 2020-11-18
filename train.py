@@ -75,7 +75,7 @@ def train(model,
         for sequence in dl.pooled_batches(dataloader):
             rgb, gt, distanc_class = sequence['image'], sequence['gt'], sequence['dists']
 
-            if rgb[0].size(0) != tr_conf['b_s']:
+            if rgb[0].size(0) != tr_conf['b_s'] or len(rgb)==1:
                 continue
 
             predicted_masks = model(rgb, gt, epoch=epoch, offset=tr_conf['offset_epoch'])
